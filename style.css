@@ -14,6 +14,7 @@ body {
     -webkit-font-smoothing: antialiased;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
     background: #FF416C;  
     background: -webkit-linear-gradient(to bottom, #FF4B2B, #FF416C);
@@ -64,15 +65,17 @@ h6 {
 {
     display: flex;
     flex-wrap: wrap;
+    height: 800px;
+    width: 800px;
 }
 
 .box
 {
     background-color: rgb(255, 255, 255);
-    height: 50px;
-    width: 50px;
     outline: 1px solid black;
     outline-offset: -1px;
+    height: 50px;
+    width: 50px;
 }
 
 .active
@@ -96,3 +99,9 @@ h6 {
     cursor: pointer;
     background-color: #9861f8;
 }
+
+.column
+{
+    flex: 1;
+}
+
