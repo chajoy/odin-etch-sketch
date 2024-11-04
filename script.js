@@ -10,6 +10,10 @@ const createTable = function ()
         {
             const box = document.createElement(`div`);
             box.classList.add(`box`);
+            box.addEventListener(`mouseenter`, () =>
+            {
+                box.style.backgroundColor = `grey`;
+            })
             column.appendChild(box);
         }
         grid_container.appendChild(column);
