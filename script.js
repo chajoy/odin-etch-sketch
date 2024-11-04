@@ -34,6 +34,13 @@ const createTable = function (amount = 16) {
 
 }
 
+const clearTable = function ()
+{
+    let cells = document.querySelectorAll(`.column`);
+    cells.forEach((e) => e.remove());
+}
+
 btn_create_grid.addEventListener(`click`, () => {
+    clearTable();
     createTable();
 })
