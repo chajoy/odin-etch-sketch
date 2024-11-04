@@ -12,13 +12,26 @@
 </head>
 
 <body>
-    <main>
-        <h1 class="title">Etch 'a' Sketch</h1>
-        <input type="range" step="2" value="16" min="4" max="64" id="slider-grid-size" class="slider-grid-size" oninput="createGrid(value)">
-        <p id="grid-size-display"></p>
-        <div class="grid-container" id="grid-container">    
-        </div>
-    </main>
+    <div>
+        <!-- <section class="sidebar">
+            <div class="colours">
+                <div style="background-color: blue;"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section> -->
+    
+        <main>
+            <h1 class="title">Etch 'a' Sketch</h1>
+            <input type="range" step="2" value="16" min="4" max="64" id="slider-grid-size" class="slider-grid-size" oninput="createGrid(value)">
+            <p id="grid-size-display"></p>
+            <div class="grid-container" id="grid-container">    
+            </div>
+            <input type="checkbox" class="outline-tg" id="outline-tg" checked="true">Toggle Outline
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>

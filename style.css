@@ -14,7 +14,6 @@ body {
     -webkit-font-smoothing: antialiased;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     height: 100vh;
     background: #FF416C;  
     background: -webkit-linear-gradient(to bottom, #FF4B2B, #FF416C);
@@ -24,10 +23,12 @@ body {
 
 main
 {
-    background-color: rgba(244, 255, 175, 0.616);
+    background-color: rgb(238, 206, 77);
     border-radius: 20px;
     padding: 30px;
     text-align: center;
+    box-shadow: -5px 0 20px black;
+    z-index: 1;
 }
 
 img,
@@ -67,6 +68,11 @@ h4,
 h5,
 h6 {
     text-wrap: balance;
+}
+
+body > div
+{
+    display: flex;
 }
 
 .grid-container
@@ -114,7 +120,30 @@ h6 {
     accent-color: #8741ff;
 }
 
+.outline-tg
+{
+    margin-top: 30px;
+}
+
 .title
 {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+}
+
+.sidebar
+{
+    background-color: rgb(238, 206, 77);
+    border-radius: 20px 0 0 20px;
+    padding: 30px;
+    text-align: center;
+    width: 200px;
+    position: relative;
+    transform: translateX(20px);
+}
+
+.colour div
+{
+    height: 50px;
+    width: 50px;
+    background-color: black;
 }
