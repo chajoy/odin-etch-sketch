@@ -1,4 +1,5 @@
 const grid_container = document.querySelector(`#grid-container`);
+const btn_create_grid = document.querySelector(`#btn-create-grid`);
 
 const createTable = function ()
 {
@@ -20,3 +21,9 @@ const createTable = function ()
     }
 
 }
+
+btn_create_grid.addEventListener(`click`, () =>
+{
+    createTable();
+    btn_create_grid.remove();
+})

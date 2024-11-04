@@ -9,6 +9,7 @@
 }
 
 body {
+    font-family: "Roboto", sans-serif;
     display: flex;
     -webkit-font-smoothing: antialiased;
     align-items: center;
