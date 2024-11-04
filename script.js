@@ -13,7 +13,7 @@ const createTable = function ()
             box.classList.add(`box`);
             box.addEventListener(`mouseenter`, () =>
             {
-                box.style.backgroundColor = `grey`;
+                box.classList.add(`active`);
             })
             column.appendChild(box);
         }

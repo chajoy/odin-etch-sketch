@@ -74,3 +74,25 @@ h6 {
     outline: 1px solid black;
     outline-offset: -1px;
 }
+
+.active
+{
+    background-color: grey;
+}
+
+.btn-create-grid
+{
+    border: 5px solid #d2b8ff;
+    padding: 20px 40px;
+    background-color: #8741ff;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-create-grid:hover
+{
+    cursor: pointer;
+    background-color: #9861f8;
+}
