@@ -4,7 +4,6 @@ const createTable = function ()
 {
     for(x = 0; x < 16; x++)
     {
-        console.log(`row`);
         const row = document.createElement(`div`);
         row.classList.add(`row`);
         for(y = 0; y < 16; y++)
