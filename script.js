@@ -7,7 +7,7 @@ let mousedown = false;
 document.addEventListener(`mouseup`, () => mousedown = false);
 document.addEventListener(`mousedown`, () => mousedown = true);
 
-const createTable = function (amount = 16) {
+const createGrid = function (amount = 16) {
     let cellSize = 800 / amount;
     for (let x = 0; x < amount; x++) {
         const column = document.createElement(`div`);
@@ -34,13 +34,13 @@ const createTable = function (amount = 16) {
 
 }
 
-const clearTable = function ()
+const clearGrid = function ()
 {
     let cells = document.querySelectorAll(`.column`);
     cells.forEach((e) => e.remove());
 }
 
 btn_create_grid.addEventListener(`click`, () => {
-    clearTable();
-    createTable();
+    clearGrid();
+    createGrid();
 })
