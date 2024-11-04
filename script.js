@@ -4,15 +4,15 @@ const createTable = function ()
 {
     for(x = 0; x < 16; x++)
     {
-        const row = document.createElement(`div`);
-        row.classList.add(`row`);
+        const column = document.createElement(`div`);
+        column.classList.add(`column`);
         for(y = 0; y < 16; y++)
         {
             const box = document.createElement(`div`);
             box.classList.add(`box`);
-            row.appendChild(box);
+            column.appendChild(box);
         }
-        grid_container.appendChild(row);
+        grid_container.appendChild(column);
     }
 
 }
