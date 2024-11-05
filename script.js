@@ -2,11 +2,11 @@ const grid_container = document.querySelector(`#grid-container`);
 const btn_create_grid = document.querySelector(`#btn-create-grid`);
 const slider_grid_size = document.querySelector(`#slider-grid-size`);
 const grid_size_display = document.querySelector(`#grid-size-display`);
-const outline_toggle = document.querySelector(`#outline-tg`);
+const grid_overlay_toggle = document.querySelector(`#grid-overlay-tg`);
 const GRID_SIZE = 800;
 
 let mousedown = false;
-let outlineVisible = true;
+let gridOverlayVisible = true;
 
 let currentTool = `paint`;
 
@@ -16,8 +16,8 @@ document.addEventListener(`mouseup`, () => mousedown = false);
 document.addEventListener(`mousedown`, () => mousedown = true);
 
 const createGrid = function (amount = 16) {
-    outlineVisible = true;
-    outline_toggle.classList.add(`selected`);
+    gridOverlayVisible = true;
+    grid_overlay_toggle.classList.add(`selected`);
     clearGrid();
     let cellSize = 800 / amount;
     for (let x = 0; x < amount; x++) {
@@ -75,19 +75,19 @@ const clearGrid = function ()
     cells.forEach((e) => e.remove());
 }
 
-outline_toggle.addEventListener(`click`, (e) => 
+grid_overlay_toggle.addEventListener(`click`, (e) => 
 {
     let cells = document.querySelectorAll(`.cell`);
-    if(outlineVisible)
+    if(gridOverlayVisible)
         {
-            outlineVisible = false;
+            gridOverlayVisible = false;
             cells.forEach((e) => e.style.outline = `none`);
-            outline_toggle.classList.remove(`selected`);
+            grid_overlay_toggle.classList.remove(`selected`);
         }else
         {
-            outlineVisible = true;
+            gridOverlayVisible = true;
             cells.forEach((e) => e.style.outline = ``);
-            outline_toggle.classList.add(`selected`);
+            grid_overlay_toggle.classList.add(`selected`);
         }
 })
 
