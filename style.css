@@ -160,6 +160,13 @@ button:hover {
     flex: 0 0 35px;
     width: 35px;
     height: 35px;
+    transition: transform .2s;
+}
+
+.colour:hover
+{
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 .selectedColour
