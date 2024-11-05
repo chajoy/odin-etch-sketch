@@ -18,7 +18,7 @@ const createGrid = function (amount = 16) {
     let cellSize = 800 / amount;
     for (let x = 0; x < amount; x++) {
         const column = document.createElement(`div`);
-        column.classList.add(`column`);
+        column.classList.add(`row`);
         for (let y = 0; y < amount; y++) {
             const box = document.createElement(`div`);
             box.style.height = cellSize + `px`;

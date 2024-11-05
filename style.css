@@ -78,19 +78,17 @@ body > div
 {
     box-sizing: content-box;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     height: 800px;
     width: 800px;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    outline: 1px solid black;
 }
 
 .box
 {
+    box-sizing: content-box;
     background-color: rgb(255, 255, 255);
-    border-left: 1px solid black;
-    border-top: 1px solid black;
-    outline-offset: -1px;
+    outline: 1px solid black;
     height: 50px;
     width: 50px;
 }
@@ -109,6 +107,11 @@ body > div
     font-size: 1.5rem;
     color: white;
     font-weight: bold;
+}
+
+.row
+{
+    display: flex;
 }
 
 .btn-create-grid:hover
