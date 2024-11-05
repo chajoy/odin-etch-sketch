@@ -29,12 +29,12 @@ const createGrid = function (amount = 16) {
             box.addEventListener(`mousedown`, () => 
             {
                 mousedown = true;
-                box.classList.add(`active`);
+                box.style.backgroundColor = currentColour;
             });
 
             box.addEventListener(`mouseover`, () => {
                 if (mousedown) {
-                    box.classList.add(`active`);
+                    box.style.backgroundColor = currentColour;
                 }
             })
 
@@ -65,5 +65,10 @@ outline_toggle.addEventListener(`click`, (e) =>
             boxes.forEach((e) => e.style.outline = ``);
         }
 })
+
+const selectColour = function(e)
+{
+    currentColour = e.target.style.backgroundColor;
+}
 
 createGrid();

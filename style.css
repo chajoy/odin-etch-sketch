@@ -146,9 +146,32 @@ body > div
     outline: 2px rgb(168, 167, 167) dashed;
 }
 
-.colour div
+.sidebar > h2
 {
+    margin-bottom: 20px;
+}
+
+.colours
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3 , 1fr);
+}
+
+.colours div
+{
+    flex: 0 0 50px;
     height: 50px;
     width: 50px;
+    outline: 1px solid black;
     background-color: black;
+    transition: filter .5s;
+}
+
+.colours div:hover
+{
+    filter: brightness(1.5);
+    cursor: pointer;
 }
