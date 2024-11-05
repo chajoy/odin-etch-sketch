@@ -27,7 +27,6 @@ main
     padding: 30px;
     text-align: center;
     outline: 2px black dashed;
-    z-index: 1;
 }
 
 img,
@@ -81,7 +80,7 @@ body > div
     flex-direction: column;
     height: 800px;
     width: 800px;
-    outline: 1px solid black;
+    outline: 2px solid black;
 }
 
 .box
@@ -124,11 +123,13 @@ body > div
 {
     width: 100%;
     accent-color: #8741ff;
+    margin: 0 0 20px 0;
 }
 
 .outline-tg
 {
-    margin-top: 30px;
+    margin: 30px 10px 0 0;
+
 }
 
 .title
@@ -138,13 +139,11 @@ body > div
 
 .sidebar
 {
-    background-color: rgb(238, 206, 77);
-    border-radius: 20px 0 0 20px;
+    background: linear-gradient(90deg, white 90%, rgb(188, 188, 188));
     padding: 30px;
     text-align: center;
     width: 200px;
-    position: relative;
-    transform: translateX(20px);
+    outline: 2px rgb(168, 167, 167) dashed;
 }
 
 .colour div
