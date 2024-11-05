@@ -176,20 +176,16 @@ body > div
     outline: 3px solid var(--purple-light);
 }
 
-.tools button
+button
 {
     border: none;
     width: 100%;
-}
-
-.button
-{
     margin-bottom: 10px;
     padding: 10px 10px;
     transition: background-color .5s;
 }
 
-.button:hover
+button:hover
 {
     cursor: pointer;
     background-color: var(--purple);
