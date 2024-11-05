@@ -17,7 +17,7 @@ document.addEventListener(`mousedown`, () => mousedown = true);
 
 const createGrid = function (amount = 16) {
     outlineVisible = true;
-    outline_toggle.checked = true;
+    outline_toggle.classList.add(`selected`);
     clearGrid();
     let cellSize = 800 / amount;
     for (let x = 0; x < amount; x++) {
