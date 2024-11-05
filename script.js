@@ -46,7 +46,7 @@ const createGrid = function (amount = 16) {
     gridOverlayVisible = true;
     grid_overlay_toggle.classList.add(`selected`);
     clearGrid();
-    let cellSize = 800 / amount;
+    let cellSize = GRID_SIZE / amount;
     for (let x = 0; x < amount; x++) {
         let column = document.createElement(`div`);
         column.classList.add(`row`);
