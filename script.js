@@ -10,7 +10,7 @@ let outlineVisible = true;
 
 let currentTool = `paint`;
 
-let currentColour = `#000000`;
+let currentColour = `black`;
 
 document.addEventListener(`mouseup`, () => mousedown = false);
 document.addEventListener(`mousedown`, () => mousedown = true);
@@ -93,7 +93,7 @@ outline_toggle.addEventListener(`click`, (e) =>
 
 const selectColour = function(e)
 {
-    currentColour = e.target.style.backgroundColor;
+    currentColour = e;
 }
 
 const selectTool = function(e)

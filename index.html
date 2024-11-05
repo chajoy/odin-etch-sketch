@@ -8,22 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Etch 'a' Sketch</title>
+    <title>etch 'a' sketch</title>
 </head>
 
 <body>
     <div>
         <section class="sidebar">
-            <h2>colours</h2>
-            <div class="colours" onclick="selectColour(event)">
-                <div style="background-color: rgb(255, 255, 255);"></div>
-                <div style="background-color: rgb(0, 0, 0);"></div>
-                <div style="background-color: rgb(73, 73, 181);"></div>
-                <div style="background-color: rgb(62, 162, 62);"></div>
-                <div style="background-color: rgb(229, 167, 52);"></div>
-                <div style="background-color: rgb(241, 241, 85);"></div>
-                <div style="background-color: rgb(220, 64, 64);"></div>
-            </div>
             <h2>tools</h2>
             <div class="tools" onclick="selectTool(event)">
                 <button tool="paint" class="tool selected button">
@@ -33,16 +23,18 @@
                     bucket
                 </button>
             </div>
+            <h2>colour</h2>
+            <input type="color" style="width: 100%;" oninput="selectColour(this.value)">
         </section>
     
         <main>
-            <h1 class="title">Etch 'a' Sketch</h1>
-            <input type="range" step="2" value="16" min="4" max="64" id="slider-grid-size" class="slider-grid-size" oninput="createGrid(value)">
+            <h1 class="title">etch 'a' sketch</h1>
+            <input type="range" step="2" value="16" min="4" max="64" id="slider-grid-size" class="slider-grid-size" oninput="createGrid(this.value)">
             <p id="grid-size-display"></p>
             <div class="grid-container" id="grid-container">    
             </div>
             
-            <button class="outline-tg selected button" id="outline-tg">Toggle Outline</button>
+            <button class="outline-tg selected button" id="outline-tg">toggle outline</button>
         </main>
     </div>
 
