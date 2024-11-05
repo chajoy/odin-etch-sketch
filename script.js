@@ -9,12 +9,38 @@ const GRID_SIZE = 800;
 let mousedown = false;
 let gridOverlayVisible = true;
 
+let maxColourCount = 16;
+
+let colourPalette_index = 0;
+
 let currentTool = `paint`;
 
 let currentColour = `black`;
 
+let colourPalette_array = [];
+
 document.addEventListener(`mouseup`, () => mousedown = false);
 document.addEventListener(`mousedown`, () => mousedown = true);
+
+grid_overlay_toggle.addEventListener(`click`, (e) => {
+    let cells = document.querySelectorAll(`.cell`);
+    if (gridOverlayVisible) {
+        gridOverlayVisible = false;
+        cells.forEach((e) => e.style.outline = `none`);
+        grid_overlay_toggle.classList.remove(`selected`);
+    } else {
+        gridOverlayVisible = true;
+        cells.forEach((e) => e.style.outline = ``);
+        grid_overlay_toggle.classList.add(`selected`);
+    }
+})
+
+container_colourPalette.addEventListener(`click`, (e) =>
+{
+    currentColour = e.target.style.backgroundColor;
+    colourPalette_array.forEach((e) => e.classList.remove(`selectedColour`));
+    e.target.classList.add(`selectedColour`);
+})
 
 const createGrid = function (amount = 16) {
     gridOverlayVisible = true;
@@ -71,18 +97,6 @@ const clearGrid = function () {
     cells.forEach((e) => e.remove());
 }
 
-grid_overlay_toggle.addEventListener(`click`, (e) => {
-    let cells = document.querySelectorAll(`.cell`);
-    if (gridOverlayVisible) {
-        gridOverlayVisible = false;
-        cells.forEach((e) => e.style.outline = `none`);
-        grid_overlay_toggle.classList.remove(`selected`);
-    } else {
-        gridOverlayVisible = true;
-        cells.forEach((e) => e.style.outline = ``);
-        grid_overlay_toggle.classList.add(`selected`);
-    }
-})
 
 const selectColour = function (e) {
     currentColour = e;
@@ -97,10 +111,23 @@ const selectTool = function (e) {
 }
 
 const addToPalette = function () {
-    let newColour = document.createElement(`div`);
-    newColour.style.backgroundColor = currentColour;
-    newColour.classList.add(`colour`);
-    container_colourPalette.appendChild(newColour);
+    if(colourPalette_array.length != maxColourCount)
+    {
+        let newColour = document.createElement(`div`);
+        newColour.style.backgroundColor = currentColour;
+        newColour.classList.add(`colour`);
+        container_colourPalette.appendChild(newColour);
+        colourPalette_array.push(newColour);
+    }else if(colourPalette_array.length === maxColourCount && colourPalette_index != maxColourCount)
+    {
+        colourPalette_array[colourPalette_index].style.backgroundColor = currentColour;
+        colourPalette_index++;
+    }else
+    {
+        colourPalette_index = 0;
+        colourPalette_array[colourPalette_index].style.backgroundColor = currentColour;
+        colourPalette_index++;
+    }
 }
 
 createGrid();

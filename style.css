@@ -161,3 +161,9 @@ button:hover {
     width: 35px;
     height: 35px;
 }
+
+.selectedColour
+{
+    outline: 2px solid var(--purple-light);
+    outline-offset: -2px;
+}
