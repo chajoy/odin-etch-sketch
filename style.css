@@ -83,7 +83,7 @@ body > div
     outline: 2px solid black;
 }
 
-.box
+.cell
 {
     box-sizing: content-box;
     background-color: rgb(255, 255, 255);
@@ -92,7 +92,7 @@ body > div
     width: 50px;
 }
 
-.box:hover
+.cell:hover
 {
     filter: brightness(0.8);
 }

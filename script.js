@@ -20,25 +20,25 @@ const createGrid = function (amount = 16) {
         const column = document.createElement(`div`);
         column.classList.add(`row`);
         for (let y = 0; y < amount; y++) {
-            const box = document.createElement(`div`);
-            box.style.height = cellSize + `px`;
-            box.style.width = cellSize + `px`;
+            const cell = document.createElement(`div`);
+            cell.style.height = cellSize + `px`;
+            cell.style.width = cellSize + `px`;
 
-            box.classList.add(`box`);
+            cell.classList.add(`cell`);
 
-            box.addEventListener(`mousedown`, () => 
+            cell.addEventListener(`mousedown`, () => 
             {
                 mousedown = true;
-                box.style.backgroundColor = currentColour;
+                cell.style.backgroundColor = currentColour;
             });
 
-            box.addEventListener(`mouseover`, () => {
+            cell.addEventListener(`mouseover`, () => {
                 if (mousedown) {
-                    box.style.backgroundColor = currentColour;
+                    cell.style.backgroundColor = currentColour;
                 }
             })
 
-            column.appendChild(box);
+            column.appendChild(cell);
         }
         grid_container.appendChild(column);
     }
@@ -56,13 +56,13 @@ outline_toggle.addEventListener(`click`, (e) =>
     if(outlineVisible)
         {
             outlineVisible = false;
-            let boxes = document.querySelectorAll(`.box`);
-            boxes.forEach((e) => e.style.outline = `none`);
+            let cells = document.querySelectorAll(`.cell`);
+            cells.forEach((e) => e.style.outline = `none`);
         }else
         {
             outlineVisible = true;
-            let boxes = document.querySelectorAll(`.box`);
-            boxes.forEach((e) => e.style.outline = ``);
+            let cells = document.querySelectorAll(`.cell`);
+            cells.forEach((e) => e.style.outline = ``);
         }
 })
 
