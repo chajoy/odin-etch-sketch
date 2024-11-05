@@ -26,7 +26,11 @@ const createGrid = function (amount = 16) {
 
             box.classList.add(`box`);
 
-            box.addEventListener(`mousedown`, () => mousedown = true);
+            box.addEventListener(`mousedown`, () => 
+            {
+                mousedown = true;
+                box.classList.add(`active`);
+            });
 
             box.addEventListener(`mouseover`, () => {
                 if (mousedown) {
