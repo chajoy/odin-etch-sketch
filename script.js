@@ -47,7 +47,7 @@ const createGrid = function (amount = 16) {
 
 const clearGrid = function ()
 {
-    let cells = document.querySelectorAll(`.column`);
+    let cells = document.querySelectorAll(`.row`);
     cells.forEach((e) => e.remove());
 }
 
