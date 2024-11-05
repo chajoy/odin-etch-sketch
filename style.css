@@ -92,6 +92,11 @@ body > div
     width: 50px;
 }
 
+.box:hover
+{
+    filter: brightness(0.8);
+}
+
 .active
 {
     background-color: grey;
