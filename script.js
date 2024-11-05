@@ -8,6 +8,10 @@ const GRID_SIZE = 800;
 let mousedown = false;
 let outlineVisible = true;
 
+let currentTool = `paint`;
+
+let currentColour = `#000000`;
+
 document.addEventListener(`mouseup`, () => mousedown = false);
 document.addEventListener(`mousedown`, () => mousedown = true);
 
@@ -29,12 +33,22 @@ const createGrid = function (amount = 16) {
             cell.addEventListener(`mousedown`, () => 
             {
                 mousedown = true;
-                cell.style.backgroundColor = currentColour;
+                switch(currentTool)
+                {
+                    case `paint`:
+                        paintCell(cell);
+                        break;
+                    case`bucket`:
+                        colourGrid();
+                        break;
+                    default:
+                        break;
+                }
             });
 
             cell.addEventListener(`mouseover`, () => {
                 if (mousedown) {
-                    cell.style.backgroundColor = currentColour;
+                    paintCell(cell);
                 }
             })
 
@@ -45,6 +59,16 @@ const createGrid = function (amount = 16) {
 
 }
 
+const paintCell = function(cell)
+{
+    cell.style.backgroundColor = currentColour;
+}
+
+const colourGrid = function()
+{
+    document.querySelectorAll(`.cell`).forEach((e)=>e.style.backgroundColor = currentColour);
+}
+
 const clearGrid = function ()
 {
     let cells = document.querySelectorAll(`.row`);
@@ -53,15 +77,14 @@ const clearGrid = function ()
 
 outline_toggle.addEventListener(`click`, (e) => 
 {
+    let cells = document.querySelectorAll(`.cell`);
     if(outlineVisible)
         {
             outlineVisible = false;
-            let cells = document.querySelectorAll(`.cell`);
             cells.forEach((e) => e.style.outline = `none`);
         }else
         {
             outlineVisible = true;
-            let cells = document.querySelectorAll(`.cell`);
             cells.forEach((e) => e.style.outline = ``);
         }
 })
@@ -69,6 +92,16 @@ outline_toggle.addEventListener(`click`, (e) =>
 const selectColour = function(e)
 {
     currentColour = e.target.style.backgroundColor;
+}
+
+const selectTool = function(e)
+{
+    if(e.target.classList.contains(`tool`))
+    {
+        document.querySelectorAll(`.tools div`).forEach((e) => e.classList.remove(`selectedTool`));
+        currentTool = e.target.getAttribute(`tool`);
+        e.target.classList.add(`selectedTool`);
+    }
 }
 
 createGrid();

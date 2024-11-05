@@ -151,9 +151,9 @@ body > div
     outline: 2px rgb(168, 167, 167) dashed;
 }
 
-.sidebar > h2
+.sidebar h2
 {
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .colours
@@ -179,4 +179,26 @@ body > div
 {
     filter: brightness(1.5);
     cursor: pointer;
+}
+
+.tools div
+{
+    margin-bottom: 10px;
+    padding: 10px 0;
+    outline: 1px solid black;
+    transition: background-color .5s;
+}
+
+.tools div:hover
+{
+    cursor: pointer;
+    background-color: #8741ff;
+    color: white;
+}
+
+.selectedTool
+{
+    outline: 2px solid #8741ff;
+    background-color: #9861f8;
+    color: white;
 }
