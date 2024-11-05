@@ -5,16 +5,14 @@ const grid_size_display = document.querySelector(`#grid-size-display`);
 const grid_overlay_toggle = document.querySelector(`#btn_grid-overlay-tg`);
 const container_colourPalette = document.querySelector(`#container_colourPalette`);
 const GRID_SIZE = 800;
+const MAX_COLOUR_COUNT = 16;
 
 let mousedown = false;
 let gridOverlayVisible = true;
 
-let maxColourCount = 16;
-
 let colourPalette_index = 0;
 
 let currentTool = `paint`;
-
 let currentColour = `black`;
 
 let colourPalette_array = [];
@@ -111,14 +109,14 @@ const selectTool = function (e) {
 }
 
 const addToPalette = function () {
-    if(colourPalette_array.length != maxColourCount)
+    if(colourPalette_array.length != MAX_COLOUR_COUNT)
     {
         let newColour = document.createElement(`div`);
         newColour.style.backgroundColor = currentColour;
         newColour.classList.add(`colour`);
         container_colourPalette.appendChild(newColour);
         colourPalette_array.push(newColour);
-    }else if(colourPalette_array.length === maxColourCount && colourPalette_index != maxColourCount)
+    }else if(colourPalette_array.length === MAX_COLOUR_COUNT && colourPalette_index != MAX_COLOUR_COUNT)
     {
         colourPalette_array[colourPalette_index].style.backgroundColor = currentColour;
         colourPalette_index++;
