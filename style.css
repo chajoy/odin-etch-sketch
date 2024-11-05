@@ -83,7 +83,7 @@ body>div {
     flex-direction: column;
     height: 800px;
     width: 800px;
-    outline: 2px solid black;
+    outline: 5px solid black;
 }
 
 .cell {
@@ -119,6 +119,7 @@ body>div {
 
 .title {
     margin-bottom: 30px;
+    text-align: left;
 }
 
 .sidebar {
@@ -130,6 +131,11 @@ body>div {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.sidebar h2
+{
+    text-align: right;
 }
 
 button {
