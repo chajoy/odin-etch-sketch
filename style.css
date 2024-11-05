@@ -1,5 +1,4 @@
-:root
-{
+:root {
     --purple: #8741ff;
     --purple-light: #d6bfff;
 }
@@ -22,14 +21,13 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: #EFEFBB; 
-    background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB); 
+    background: #EFEFBB;
+    background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);
     background: linear-gradient(to right, #D4D3DD, #EFEFBB);
 
 }
 
-main
-{
+main {
     background-color: white;
     padding: 30px;
     text-align: center;
@@ -75,13 +73,11 @@ h6 {
     text-wrap: balance;
 }
 
-body > div
-{
+body>div {
     display: flex;
 }
 
-.grid-container
-{
+.grid-container {
     box-sizing: content-box;
     display: flex;
     flex-direction: column;
@@ -90,8 +86,7 @@ body > div
     outline: 2px solid black;
 }
 
-.cell
-{
+.cell {
     box-sizing: content-box;
     background-color: white;
     outline: 1px solid black;
@@ -99,41 +94,34 @@ body > div
     width: 50px;
 }
 
-.cell:hover
-{
+.cell:hover {
     filter: brightness(0.8);
 }
 
-.active
-{
+.active {
     background-color: grey;
 }
 
-.row
-{
+.row {
     display: flex;
 }
 
-.slider-grid-size
-{
+.slider-grid-size {
     width: 100%;
     accent-color: #8741ff;
     margin: 0 0 20px 0;
 }
 
-.grid-overlay-tg
-{
+.grid-overlay-tg {
     margin: 30px 0 0 0;
     border: none;
 }
 
-.title
-{
+.title {
     margin-bottom: 30px;
 }
 
-.sidebar
-{
+.sidebar {
     background: linear-gradient(90deg, white 90%, rgb(188, 188, 188));
     padding: 30px;
     text-align: center;
@@ -141,43 +129,11 @@ body > div
     outline: 2px rgb(168, 167, 167) dashed;
 }
 
-.sidebar h2
-{
+.sidebar h2 {
     margin: 20px;
 }
 
-.colours
-{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(3 , 1fr);
-}
-
-.colours .colour
-{
-    flex: 0 0 50px;
-    height: 50px;
-    width: 50px;
-    outline: 1px solid black;
-    background-color: black;
-    transition: filter .5s;
-}
-
-.colours .colour:hover
-{
-    filter: brightness(1.5);
-    cursor: pointer;
-}
-
-.colours .currentColour
-{
-    outline: 3px solid var(--purple-light);
-}
-
-button
-{
+button {
     border: none;
     width: 100%;
     margin-bottom: 10px;
@@ -185,16 +141,25 @@ button
     transition: background-color .5s;
 }
 
-button:hover
-{
+button:hover {
     cursor: pointer;
     background-color: var(--purple);
     color: white;
 }
 
-.selected
-{
+.selected {
     outline: 2px solid var(--purple-light);
     background-color: var(--purple);
     color: white;
+}
+
+.colourPalette {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.colour {
+    flex: 0 0 35px;
+    width: 35px;
+    height: 35px;
 }

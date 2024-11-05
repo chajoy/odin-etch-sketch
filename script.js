@@ -2,7 +2,8 @@ const grid_container = document.querySelector(`#grid-container`);
 const btn_create_grid = document.querySelector(`#btn-create-grid`);
 const slider_grid_size = document.querySelector(`#slider-grid-size`);
 const grid_size_display = document.querySelector(`#grid-size-display`);
-const grid_overlay_toggle = document.querySelector(`#grid-overlay-tg`);
+const grid_overlay_toggle = document.querySelector(`#btn_grid-overlay-tg`);
+const container_colourPalette = document.querySelector(`#container_colourPalette`);
 const GRID_SIZE = 800;
 
 let mousedown = false;
@@ -21,24 +22,22 @@ const createGrid = function (amount = 16) {
     clearGrid();
     let cellSize = 800 / amount;
     for (let x = 0; x < amount; x++) {
-        const column = document.createElement(`div`);
+        let column = document.createElement(`div`);
         column.classList.add(`row`);
         for (let y = 0; y < amount; y++) {
-            const cell = document.createElement(`div`);
+            let cell = document.createElement(`div`);
             cell.style.height = cellSize + `px`;
             cell.style.width = cellSize + `px`;
 
             cell.classList.add(`cell`);
 
-            cell.addEventListener(`mousedown`, () => 
-            {
+            cell.addEventListener(`mousedown`, () => {
                 mousedown = true;
-                switch(currentTool)
-                {
+                switch (currentTool) {
                     case `paint`:
                         paintCell(cell);
                         break;
-                    case`bucket`:
+                    case `bucket`:
                         colourGrid();
                         break;
                     default:
@@ -59,51 +58,49 @@ const createGrid = function (amount = 16) {
 
 }
 
-const paintCell = function(cell)
-{
+const paintCell = function (cell) {
     cell.style.backgroundColor = currentColour;
 }
 
-const colourGrid = function()
-{
-    document.querySelectorAll(`.cell`).forEach((e)=>e.style.backgroundColor = currentColour);
+const colourGrid = function () {
+    document.querySelectorAll(`.cell`).forEach((e) => e.style.backgroundColor = currentColour);
 }
 
-const clearGrid = function ()
-{
+const clearGrid = function () {
     let cells = document.querySelectorAll(`.row`);
     cells.forEach((e) => e.remove());
 }
 
-grid_overlay_toggle.addEventListener(`click`, (e) => 
-{
+grid_overlay_toggle.addEventListener(`click`, (e) => {
     let cells = document.querySelectorAll(`.cell`);
-    if(gridOverlayVisible)
-        {
-            gridOverlayVisible = false;
-            cells.forEach((e) => e.style.outline = `none`);
-            grid_overlay_toggle.classList.remove(`selected`);
-        }else
-        {
-            gridOverlayVisible = true;
-            cells.forEach((e) => e.style.outline = ``);
-            grid_overlay_toggle.classList.add(`selected`);
-        }
+    if (gridOverlayVisible) {
+        gridOverlayVisible = false;
+        cells.forEach((e) => e.style.outline = `none`);
+        grid_overlay_toggle.classList.remove(`selected`);
+    } else {
+        gridOverlayVisible = true;
+        cells.forEach((e) => e.style.outline = ``);
+        grid_overlay_toggle.classList.add(`selected`);
+    }
 })
 
-const selectColour = function(e)
-{
+const selectColour = function (e) {
     currentColour = e;
 }
 
-const selectTool = function(e)
-{
-    if(e.target.classList.contains(`tool`))
-    {
+const selectTool = function (e) {
+    if (e.target.classList.contains(`tool`)) {
         document.querySelectorAll(`.tools button`).forEach((e) => e.classList.remove(`selected`));
         currentTool = e.target.getAttribute(`tool`);
         e.target.classList.add(`selected`);
     }
+}
+
+const addToPalette = function () {
+    let newColour = document.createElement(`div`);
+    newColour.style.backgroundColor = currentColour;
+    newColour.classList.add(`colour`);
+    container_colourPalette.appendChild(newColour);
 }
 
 createGrid();
