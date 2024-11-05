@@ -1,3 +1,9 @@
+:root
+{
+    --purple: #8741ff;
+    --purple-light: #d6bfff;
+}
+
 *,
 *::before,
 *::after {
@@ -6,6 +12,7 @@
 
 * {
     margin: 0;
+    user-select: none;
 }
 
 body {
@@ -86,7 +93,7 @@ body > div
 .cell
 {
     box-sizing: content-box;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     outline: 1px solid black;
     height: 50px;
     width: 50px;
@@ -102,26 +109,9 @@ body > div
     background-color: grey;
 }
 
-.btn-create-grid
-{
-    border: 5px solid #d2b8ff;
-    padding: 20px 40px;
-    background-color: #8741ff;
-    border-radius: 20px;
-    font-size: 1.5rem;
-    color: white;
-    font-weight: bold;
-}
-
 .row
 {
     display: flex;
-}
-
-.btn-create-grid:hover
-{
-    cursor: pointer;
-    background-color: #9861f8;
 }
 
 .slider-grid-size
@@ -133,8 +123,8 @@ body > div
 
 .outline-tg
 {
-    margin: 30px 10px 0 0;
-
+    margin: 30px 0 0 0;
+    border: none;
 }
 
 .title
@@ -181,24 +171,29 @@ body > div
     cursor: pointer;
 }
 
-.tools div
+.tools button
+{
+    border: none;
+    width: 100%;
+}
+
+.button
 {
     margin-bottom: 10px;
-    padding: 10px 0;
-    outline: 1px solid black;
+    padding: 10px 10px;
     transition: background-color .5s;
 }
 
-.tools div:hover
+.button:hover
 {
     cursor: pointer;
-    background-color: #8741ff;
+    background-color: var(--purple);
     color: white;
 }
 
-.selectedTool
+.selected
 {
-    outline: 2px solid #8741ff;
-    background-color: #9861f8;
+    outline: 2px solid var(--purple-light);
+    background-color: var(--purple);
     color: white;
 }

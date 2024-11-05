@@ -26,12 +26,12 @@
             </div>
             <h2>tools</h2>
             <div class="tools" onclick="selectTool(event)">
-                <div tool="paint" class="tool selectedTool">
+                <button tool="paint" class="tool selected button">
                     paint
-                </div>
-                <div tool="bucket" class="tool">
+                </button>
+                <button tool="bucket" class="tool button">
                     bucket
-                </div>
+                </button>
             </div>
         </section>
     
@@ -41,7 +41,8 @@
             <p id="grid-size-display"></p>
             <div class="grid-container" id="grid-container">    
             </div>
-            <input type="checkbox" class="outline-tg" id="outline-tg" checked="true">Toggle Outline
+            
+            <button class="outline-tg selected button" id="outline-tg">Toggle Outline</button>
         </main>
     </div>
 

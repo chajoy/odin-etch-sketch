@@ -82,10 +82,12 @@ outline_toggle.addEventListener(`click`, (e) =>
         {
             outlineVisible = false;
             cells.forEach((e) => e.style.outline = `none`);
+            outline_toggle.classList.remove(`selected`);
         }else
         {
             outlineVisible = true;
             cells.forEach((e) => e.style.outline = ``);
+            outline_toggle.classList.add(`selected`);
         }
 })
 
@@ -98,9 +100,9 @@ const selectTool = function(e)
 {
     if(e.target.classList.contains(`tool`))
     {
-        document.querySelectorAll(`.tools div`).forEach((e) => e.classList.remove(`selectedTool`));
+        document.querySelectorAll(`.tools button`).forEach((e) => e.classList.remove(`selected`));
         currentTool = e.target.getAttribute(`tool`);
-        e.target.classList.add(`selectedTool`);
+        e.target.classList.add(`selected`);
     }
 }
 
