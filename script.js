@@ -21,6 +21,41 @@ let colourPalette_array = [];
 document.addEventListener(`mouseup`, () => mousedown = false);
 document.addEventListener(`mousedown`, () => mousedown = true);
 
+grid_container.addEventListener(`mousedown`, (event)=>
+{
+    if(event.target.classList.contains(`cell`))
+    {
+        mousedown = true;
+        switch (currentTool) {
+            case `paint`:
+                paintCell(event.target);
+                break;
+            case `bucket`:
+                colourGrid();
+                break;
+            default:
+                break;
+        }
+    }
+})
+
+grid_container.addEventListener(`mouseover`, (event) => {
+    if (mousedown) {
+        paintCell(event.target);
+    }
+})
+
+grid_container.addEventListener(`mouseover`, (event) =>
+{
+    if(event.target.classList.contains(`cell`))
+    {
+        if(mousedown)
+        {
+            paintCell(event.target);
+        }
+    }
+})
+
 grid_overlay_toggle.addEventListener(`click`, (e) => {
     let cells = document.querySelectorAll(`.cell`);
     if (gridOverlayVisible) {
@@ -56,26 +91,6 @@ const createGrid = function (amount = 16) {
             cell.style.width = cellSize + `px`;
 
             cell.classList.add(`cell`);
-
-            cell.addEventListener(`mousedown`, () => {
-                mousedown = true;
-                switch (currentTool) {
-                    case `paint`:
-                        paintCell(cell);
-                        break;
-                    case `bucket`:
-                        colourGrid();
-                        break;
-                    default:
-                        break;
-                }
-            });
-
-            cell.addEventListener(`mouseover`, () => {
-                if (mousedown) {
-                    paintCell(cell);
-                }
-            })
 
             column.appendChild(cell);
         }
