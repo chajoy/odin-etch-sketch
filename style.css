@@ -114,6 +114,11 @@ body>div {
     accent-color: #8741ff;
 }
 
+.slider-grid-size:hover
+{
+    cursor: pointer;
+}
+
 .grid-overlay-tg {
     border: none;
     justify-self: flex-end;
