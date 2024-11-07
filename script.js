@@ -4,8 +4,6 @@ const slider_grid_size = document.querySelector(`#slider-grid-size`);
 const grid_size_display = document.querySelector(`#grid-size-display`);
 const grid_overlay_toggle = document.querySelector(`#btn_grid-overlay-tg`);
 const container_colourPalette = document.querySelector(`#container_colourPalette`);
-const GRID_SIZE = 800;
-let dynamic_grid_size;
 const MAX_COLOUR_COUNT = 16;
 
 let mousedown = false;
@@ -81,14 +79,10 @@ const createGrid = function (amount = 16) {
     grid_container.style.setProperty(`--rowCount`, amount);
     amount *= amount;
     clearGrid();
-    dynamic_grid_size = grid_container.offsetHeight;
     gridOverlayVisible = true;
     grid_overlay_toggle.classList.add(`selected`);
-    // let cellSize = dynamic_grid_size / amount;
     for (let x = 0; x < amount; x++) {
         let cell = document.createElement(`div`);
-        // cell.style.height = cellSize + `px`;
-        // cell.style.width = cellSize + `px`;
         cell.classList.add(`cell`);
         grid_container.appendChild(cell);
     }
@@ -141,8 +135,3 @@ const addToPalette = function () {
 }
 
 createGrid();
-
-window.addEventListener(`resize`, () => 
-{
-    createGrid();
-});

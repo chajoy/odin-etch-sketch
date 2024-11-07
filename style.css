@@ -24,18 +24,18 @@ body {
     background: #EFEFBB;
     background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);
     background: linear-gradient(to right, #D4D3DD, #EFEFBB);
-
 }
 
 main {
     background-color: white;
     padding: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 30fr 1fr;
     gap: 20px;
     outline: 2px black dashed;
     min-height: 390px;
+    width: 100%;
 }
 
 img,
@@ -79,23 +79,22 @@ h6 {
 
 body>div {
     display: flex;
-    height: 80%;
+    aspect-ratio: 1 / 1;
+    height: 80vh;
 }
 
 .grid-container {
     box-sizing: content-box;
     display: grid;
-    grid-template-columns: repeat(var(--columnCount), 1fr);
-    grid-template-rows: repeat(var(--rowCount), 1fr);
+    grid-template-columns: repeat(var(--columnCount), minmax(0, 1fr));
+    grid-template-rows: repeat(var(--rowCount), minmax(0, 1fr));
     outline: 5px solid black;
-    min-height: 210px;
 }
 
 .cell {
     box-sizing: content-box;
     background-color: white;
     outline: 1px solid black;
-
 }
 
 .cell:hover {
@@ -117,17 +116,18 @@ body>div {
 
 .grid-overlay-tg {
     border: none;
+    justify-self: flex-end;
 }
 
 .title {
-    text-align: left;
+    text-align: right;
 }
 
 .sidebar {
     background: linear-gradient(90deg, white 90%, rgb(188, 188, 188));
     padding: 30px;
     text-align: center;
-    width: 200px;
+    width: 250px;
     outline: 2px rgb(168, 167, 167) dashed;
     display: flex;
     flex-direction: column;
