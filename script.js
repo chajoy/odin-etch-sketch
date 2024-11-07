@@ -77,26 +77,21 @@ container_colourPalette.addEventListener(`click`, (e) =>
 })
 
 const createGrid = function (amount = 16) {
+    grid_container.style.setProperty(`--columnCount`, amount);
+    grid_container.style.setProperty(`--rowCount`, amount);
+    amount *= amount;
     clearGrid();
     dynamic_grid_size = grid_container.offsetHeight;
     gridOverlayVisible = true;
     grid_overlay_toggle.classList.add(`selected`);
-    let cellSize = dynamic_grid_size / amount;
+    // let cellSize = dynamic_grid_size / amount;
     for (let x = 0; x < amount; x++) {
-        let column = document.createElement(`div`);
-        column.classList.add(`row`);
-        for (let y = 0; y < amount; y++) {
-            let cell = document.createElement(`div`);
-            cell.style.height = cellSize + `px`;
-            cell.style.width = cellSize + `px`;
-
-            cell.classList.add(`cell`);
-
-            column.appendChild(cell);
-        }
-        grid_container.appendChild(column);
+        let cell = document.createElement(`div`);
+        // cell.style.height = cellSize + `px`;
+        // cell.style.width = cellSize + `px`;
+        cell.classList.add(`cell`);
+        grid_container.appendChild(cell);
     }
-
 }
 
 const paintCell = function (cell) {
@@ -108,7 +103,7 @@ const colourGrid = function () {
 }
 
 const clearGrid = function () {
-    let cells = document.querySelectorAll(`.row`);
+    let cells = document.querySelectorAll(`.cell`);
     cells.forEach((e) => e.remove());
 }
 

@@ -84,10 +84,10 @@ body>div {
 
 .grid-container {
     box-sizing: content-box;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(var(--columnCount), 1fr);
+    grid-template-rows: repeat(var(--rowCount), 1fr);
     outline: 5px solid black;
-    flex: 1 1;
     min-height: 210px;
 }
 
