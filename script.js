@@ -1,7 +1,4 @@
 const grid_container = document.querySelector(`#grid-container`);
-const btn_create_grid = document.querySelector(`#btn-create-grid`);
-const slider_grid_size = document.querySelector(`#slider-grid-size`);
-const grid_size_display = document.querySelector(`#grid-size-display`);
 const grid_overlay_toggle = document.querySelector(`#btn_grid-overlay-tg`);
 const container_colourPalette = document.querySelector(`#container_colourPalette`);
 const MAX_COLOUR_COUNT = 16;
